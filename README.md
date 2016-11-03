@@ -1,6 +1,6 @@
 # ossec-EK
 Stack and installation of a ossec-Elastic Search integration to get SIEM/PCI-Dashboard funcionality. 
-It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note EK is used instead ELK
+It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note EBK is used instead ELK
 
 ## Stack
 1. ossec-Agent Windows  
@@ -9,18 +9,14 @@ It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note E
 3. ElasticSearch log ingest via (json output-> Elastic FileBeat -> ElasticIngest.Elastic)
 
 ## Deployment Architecture
-* On every VM that needs to be watched:
+* On every VM that needs to be monitorized:
  * Windows: Install .exe on every host _ossec-agent-win32-2.8.3.exe_
  * Linux: TBD
-* 1 server or cluster:
- * 
-ossec-Server
-  * Only Linux:  
-
-
-
-
-
+* 1 ossec-Server (Linux):  
+ * It is based on https://github.com/xetus-oss/docker-ossec-server
+ * ossec-server with json output
+ * ElasticFileBeat
+* 1 ElasticSearch server (Linux)
 
 
 ### Ossec Server
