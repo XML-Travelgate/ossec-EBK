@@ -25,3 +25,11 @@ It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note E
 - http://ossec.github.io/downloads.html
 - version: 2.8.3
 - notes
+
+## Quick Start
+
+To get an up and running ossec server that supports auto-enrollment and sends HIDS notifications a syslog server, use.
+
+```
+docker run -d -p 1514:1514/udp -p 1515:1515 -v /somepath/ossec_mnt:/var/ossec/data --name ossec-EBK-server
+```
