@@ -27,8 +27,6 @@ RUN service ossec restart &&\
 
 
 
-
-
 #
 # Initialize the data volume configuration
 #
