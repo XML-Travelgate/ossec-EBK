@@ -1,4 +1,4 @@
-# ossec-EK
+# ossec-EBK
 Stack and installation of a ossec-Elastic Search integration to get SIEM/PCI-Dashboard funcionality. 
 It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note EBK is used instead ELK
 
@@ -33,8 +33,8 @@ To get an up and running ossec server that supports auto-enrollment and sends HI
 ```
 docker ps -q -a | xargs docker rm
 
-docker build -t xmltravelgate/ossecebk:0.0.1 .
-docker run -d -p 1514:1514/udp -p 1515:1515 -v /somepath/ossec_mnt:/var/ossec/data --name ossec-EBK-server
+docker build -t xmltravelgate/ossec-ebk-server:0.0.1 .
+docker run --name ossec-ebk-server -d -p 1514:1514/udp -p 1515:1515 -v /var/ossec_mnt:/var/ossec/data xmltravelgate/ossec-ebk-server:0.0.1
 ```
 
 ## Known Issues / Warnings
