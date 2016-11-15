@@ -28,14 +28,16 @@ It uses ElasticSearch new stack (5.0), so Logtash is not required. Please note E
 
 ## Quick Start
 
-To get an up and running ossec server that supports auto-enrollment and sends HIDS notifications a syslog server, use.
-
+### ossec Server
+* Run oseec server Docker image to get an up and running ossec server that supports auto-enrollment and sends HIDS notifications.
 ```
 docker ps -q -a | xargs docker rm
-
 docker build -t xmltravelgate/ossec-ebk-server:0.0.1 .
 docker run --name ossec-ebk-server -d -p 1514:1514/udp -p 1515:1515 -v /var/ossec_mnt:/var/ossec/data xmltravelgate/ossec-ebk-server:0.0.1
 ```
+* Open Server Firewall port 1514
+
+### ossec Agent
 
 ## Known Issues / Warnings
 - Default Agent (127.0.0.1) is installed due start ossec server error
